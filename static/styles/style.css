@@ -382,11 +382,3 @@ table {
     border: 2px solid #7B78E5;
     cursor: pointer;
 }
-
-.container {
-    display: flex;
-}
-
-.content {
-    flex-grow: 1;
-}
