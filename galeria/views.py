@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse 
-from galeria.models import Fotografia 
+from galeria.models import Fotografia
 from django.shortcuts import render, get_object_or_404
+
 
 def index(request): 
     fotografias = Fotografia.objects.order_by("data_fotografia").filter(publicada=True)
