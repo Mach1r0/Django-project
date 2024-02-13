@@ -12,16 +12,16 @@ def login(request):
         if form.is_valid():
             nome = form['nome_login'].value()
             senha = form['senha'].value()
-        
-        usuario = auth.authenticate(
-            request, 
-            username = nome,
-            password = senha
-        )
-        if usuario is not None:
-            auth.login(request, usuario)
-            messages.success(request, f"{nome} logado com sucesso")
-            return redirect('index')
+
+            usuario = auth.authenticate(
+                request, 
+                username = nome,
+                password = senha
+            )
+            if usuario is not None:
+                auth.login(request, usuario)
+                messages.success(request, f"{nome} logado com sucesso")
+                return redirect('index')
         else:
             messages.error(request,"erro ao efetuar o login")
             return redirect('login')
